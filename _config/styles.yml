@@ -1,0 +1,11 @@
+---
+Name: silverware-search-styles
+---
+
+# Configure Bootstrap Styles:
+
+SilverWare\Grid\Frameworks\Bootstrap\Framework:
+  style_mappings:
+    navbar:
+      search: navbar-nav navbar-search
+      search-icon: nav-link navbar-search-icon

@@ -1,0 +1,23 @@
+/* SilverWare Search Bundle
+===================================================================================================================== */
+
+// Import SilverWare Theme Files:
+
+@import "~silverware-theme/styles/variables";
+@import "~silverware-theme/styles/mixins";
+
+// Import Bootstrap Files:
+
+@import "~bootstrap/scss/mixins";
+
+// Import Module Variables:
+
+@import "variables";
+
+// Import Module Styles:
+
+@import "styles";
+
+// Import Item Styles:
+
+@import "items/SearchItem";

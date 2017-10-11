@@ -1,0 +1,134 @@
+/* Search Item Styles
+===================================================================================================================== */
+
+// Search Styles:
+
+.navbar-search {
+  
+  // Hide Icon + Popover (on mobile):
+  
+  .navbar-search-icon,
+  .navbar-search-popover {
+    display: none;
+  }
+  
+}
+
+// Mobile Search Styles:
+
+.navbar-search-mobile {
+  
+  form {
+    
+    margin: $spacer-half 0;
+    
+    > fieldset {
+      
+      position: relative;
+      
+      .field,
+      .action {
+        margin: 0;
+      }
+      
+      .field > input {
+        padding-right: 38px;
+      }
+      
+      .field::after {
+        top: 1px;
+        right: 10px;
+        color: $search-mobile-icon-color;
+        content: "\f002";  // search icon
+        font-size: $font-size-base;
+        line-height: 1.25;
+        font-family: 'FontAwesome';
+        padding: $spacer-half 0;
+        position: absolute;
+      }
+      
+      .action {
+        
+        top: 0;
+        right: 0;
+        max-width: 38px;
+        color: transparent;
+        border-color: transparent;
+        background-color: transparent;
+        position: absolute;
+        
+        &:focus {
+          box-shadow: none;
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+}
+
+// Search Icon Styles:
+
+.navbar-search-icon {
+  padding: 0 $spacer;
+}
+
+// Search Popover Styles:
+
+.navbar-search-popover {
+  
+  form {
+    
+    margin: $spacer-quarter 0;
+    
+    > fieldset {
+      
+      .field,
+      .action {
+        margin: 0;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      
+      .field.text {
+        max-width: 180px;
+      }
+      
+    }
+    
+  }
+  
+}
+
+// Media Queries:
+
+.navbar-expand {
+  
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+    
+    &#{$infix} {
+      
+      @include media-breakpoint-up($next) {
+        
+        // Show Search Icon + Hide Mobile Search:
+        
+        .navbar-search-icon {
+          display: block;
+        }
+        
+        .navbar-search-mobile {
+          display: none;
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+}

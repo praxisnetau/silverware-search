@@ -1,0 +1,47 @@
+/* SilverWare Search Styles
+===================================================================================================================== */
+
+.searchresultspage {
+  
+  .message {
+    color: $search-page-message-color;
+  }
+  
+  .results {
+    
+    > article.result {
+      
+      margin-bottom: $search-result-margin;
+      
+      header {
+        
+        > * {
+          font-size: $search-result-header-font-size;
+          font-weight: $search-result-header-font-weight;
+          margin-bottom: 0;
+        }
+        
+      }
+      
+      div.link {
+        color: $search-result-absolute-url-color;
+        font-size: $search-result-absolute-url-font-size;
+      }
+      
+      div.text {
+        
+        color: $search-result-text-color;
+        margin: $search-result-text-margin 0;
+        font-size: $search-result-text-font-size;
+        
+        p {
+          margin: 0;
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+}

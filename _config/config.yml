@@ -1,0 +1,11 @@
+---
+Name: silverware-search
+---
+
+# Configure Content Controller:
+
+SilverStripe\CMS\Controllers\ContentController:
+  required_js:
+    - "silverware/search: client/dist/js/bundle.js"
+  required_css:
+    - "silverware/search: client/dist/styles/bundle.css"

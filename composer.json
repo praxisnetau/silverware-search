@@ -1,0 +1,41 @@
+{
+  "name": "silverware/search",
+  "type": "silverstripe-vendormodule",
+  "description": "SilverWare Search Module.",
+  "homepage": "https://github.com/praxisnetau/silverware-search",
+  "keywords": [
+    "silverware",
+    "search",
+    "silverstripe"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Colin Tucker",
+      "role": "Developer",
+      "email": "colin@praxis.net.au",
+      "homepage": "http://www.praxis.net.au"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "silverware/navigation": "^1.4",
+    "silverware/silverware": "^1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "SilverWare\\Search\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    },
+    "expose": [
+      "admin/client/dist",
+      "client/dist"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
