@@ -72,7 +72,11 @@
 // Search Icon Styles:
 
 .navbar-search-icon {
-  padding: 0 $spacer;
+  
+  &.nav-link {
+    padding: 0 $spacer;
+  }
+  
 }
 
 // Search Popover Styles:
