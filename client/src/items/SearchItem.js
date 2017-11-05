@@ -12,6 +12,11 @@ $(function() {
     var $self = $(this);
     var $link = $self.find('a');
     
+    $link.on('click', function(e) {
+      e.preventDefault();
+      return true;
+    });
+    
     $link.popover({
       html: true,
       content: $self.find('.navbar-search-popover')
