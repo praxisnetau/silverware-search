@@ -52,14 +52,11 @@
         top: 0;
         right: 0;
         max-width: 38px;
-        color: transparent;
-        border-color: transparent;
-        background-color: transparent;
         position: absolute;
-        
-        &:focus {
-          box-shadow: none;
-        }
+        color: transparent !important;
+        border-color: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
         
       }
       
