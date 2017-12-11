@@ -61,6 +61,14 @@ class SearchResultsPage extends Page
     private static $icon = 'silverware/search: admin/client/dist/images/icons/SearchResultsPage.png';
     
     /**
+     * Defines the table name to use for this object.
+     *
+     * @var string
+     * @config
+     */
+    private static $table_name = 'SilverWare_SearchResultsPage';
+    
+    /**
      * Description of this object.
      *
      * @var string
