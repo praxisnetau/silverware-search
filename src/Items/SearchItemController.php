@@ -76,6 +76,16 @@ class SearchItemController extends ComponentController
     }
     
     /**
+     * Answers the field mode search form for the template.
+     *
+     * @return SearchForm
+     */
+    public function SearchFormField()
+    {
+        return $this->getSearchForm('SearchFormField');
+    }
+    
+    /**
      * Answers the mobile search form for the template.
      *
      * @return SearchForm

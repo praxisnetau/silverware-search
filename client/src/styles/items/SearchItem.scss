@@ -5,17 +5,19 @@
 
 .navbar-search {
   
-  // Hide Icon + Popover (on mobile):
+  // Hide Icon + Field + Popover (on mobile):
   
   .navbar-search-icon,
+  .navbar-search-field,
   .navbar-search-popover {
     display: none;
   }
   
 }
 
-// Mobile Search Styles:
+// Search Field + Mobile Styles:
 
+.navbar-search-field,
 .navbar-search-mobile {
   
   form {
@@ -76,6 +78,24 @@
   
 }
 
+// Search Field Styles:
+
+.navbar-search-field {
+  
+  form {
+    
+    > fieldset {
+      
+      .field.text {
+        max-width: 240px;
+      }
+      
+    }
+    
+  }
+  
+}
+
 // Search Popover Styles:
 
 .navbar-search-popover {
@@ -116,9 +136,10 @@
       
       @include media-breakpoint-up($next) {
         
-        // Show Search Icon + Hide Mobile Search:
+        // Show Search Icon + Field + Hide Mobile Search:
         
-        .navbar-search-icon {
+        .navbar-search-icon,
+        .navbar-search-field {
           display: block;
         }
         
