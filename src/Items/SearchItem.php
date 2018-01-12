@@ -18,6 +18,7 @@
 namespace SilverWare\Search\Items;
 
 use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\DropdownField;
 use SilverWare\FontIcons\Extensions\FontIconExtension;
 use SilverWare\Forms\FieldSection;
 use SilverWare\Navigation\Model\BarItem;
@@ -33,6 +34,12 @@ use SilverWare\Navigation\Model\BarItem;
  */
 class SearchItem extends BarItem
 {
+    /**
+     * Define constants.
+     */
+    const MODE_ICON  = 'icon';
+    const MODE_FIELD = 'field';
+    
     /**
      * Human-readable singular name.
      *
@@ -80,7 +87,8 @@ class SearchItem extends BarItem
      * @config
      */
     private static $db = [
-        'ShowTitle' => 'Boolean'
+        'ShowTitle' => 'Boolean',
+        'ModeExpanded' => 'Varchar(16)'
     ];
     
     /**
@@ -91,7 +99,8 @@ class SearchItem extends BarItem
      */
     private static $defaults = [
         'FontIcon' => 'search',
-        'ShowTitle' => 0
+        'ShowTitle' => 0,
+        'ModeExpanded' => self::MODE_ICON
     ];
     
     /**
@@ -139,6 +148,17 @@ class SearchItem extends BarItem
                             $this->fieldLabel('ShowTitle')
                         )
                     ]
+                ),
+                FieldSection::create(
+                    'SearchOptions',
+                    $this->fieldLabel('SearchOptions'),
+                    [
+                        DropdownField::create(
+                            'ModeExpanded',
+                            $this->fieldLabel('ModeExpanded'),
+                            $this->getModeExpandedOptions()
+                        )
+                    ]
                 )
             ]
         );
@@ -165,6 +185,8 @@ class SearchItem extends BarItem
         
         $labels['ShowTitle'] = _t(__CLASS__ . '.SHOWTITLE', 'Show title');
         $labels['TitleOptions'] = _t(__CLASS__ . '.TITLE', 'Title');
+        $labels['SearchOptions'] = _t(__CLASS__ . '.SEARCH', 'Search');
+        $labels['ModeExpanded'] = _t(__CLASS__ . '.MODEEXPANDED', 'Mode (Expanded)');
         
         // Answer Field Labels:
         
@@ -222,6 +244,39 @@ class SearchItem extends BarItem
     public function getLinkAttributesHTML()
     {
         return $this->getAttributesHTML($this->getLinkAttributes());
+    }
+    
+    /**
+     * Answers an array of options for the mode expanded field.
+     *
+     * @return array
+     */
+    public function getModeExpandedOptions()
+    {
+        return [
+            self::MODE_ICON  => _t(__CLASS__ . '.ICON', 'Icon'),
+            self::MODE_FIELD => _t(__CLASS__ . '.FIELD', 'Field')
+        ];
+    }
+    
+    /**
+     * Answers true if the mode expanded is set to field.
+     *
+     * @return boolean
+     */
+    public function isField()
+    {
+        return ($this->ModeExpanded == self::MODE_FIELD);
+    }
+    
+    /**
+     * Answers true if the mode expanded is set to icon.
+     *
+     * @return boolean
+     */
+    public function isIcon()
+    {
+        return ($this->ModeExpanded == self::MODE_ICON);
     }
     
     /**
