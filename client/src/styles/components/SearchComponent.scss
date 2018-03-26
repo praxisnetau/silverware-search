@@ -1,0 +1,53 @@
+/* Search Component Styles
+===================================================================================================================== */
+
+.searchcomponent {
+  
+  form {
+    
+    margin: $spacer-half 0;
+    padding: 0 $spacer;
+    
+    > fieldset {
+      
+      position: relative;
+      
+      .field,
+      .action {
+        margin: 0;
+      }
+      
+      .field > input {
+        padding-right: 38px;
+      }
+      
+      .field::after {
+        top: 1px;
+        right: 10px;
+        color: $search-component-icon-color;
+        content: "\f002";  // search icon
+        font-size: $font-size-base;
+        line-height: 1.25;
+        font-family: 'FontAwesome';
+        padding: $spacer-half 0;
+        position: absolute;
+      }
+      
+      .action {
+        
+        top: 0;
+        right: 0;
+        max-width: 38px;
+        position: absolute;
+        color: transparent !important;
+        border-color: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        
+      }
+      
+    }
+    
+  }
+  
+}
